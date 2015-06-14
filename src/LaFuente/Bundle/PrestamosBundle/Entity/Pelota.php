@@ -32,6 +32,7 @@ class Pelota extends Product
      * @ORM\Column(name="estado", type="string", length=63)
      */
     protected $estado;
+    
 
     /**
      * Set identifier

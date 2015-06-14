@@ -83,6 +83,8 @@ class User extends BaseUser
      * @ORM\OneToMany(targetEntity="LaFuente\Bundle\PrestamosBundle\Entity\Prestamo", mappedBy="usuario")
      **/
     protected $prestamos;
+
+    
     /**
      * Constructor
      */

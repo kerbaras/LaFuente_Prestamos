@@ -23,6 +23,7 @@ class Termo extends Product
      * @ORM\OneToOne(targetEntity="Mate", mappedBy="termo")
      **/
     protected $mate;
+    
 
     /**
      * Set numero

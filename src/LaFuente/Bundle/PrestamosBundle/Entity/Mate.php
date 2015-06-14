@@ -24,6 +24,7 @@ class Mate extends Product
      * @ORM\JoinColumn(name="termo_id", referencedColumnName="id")
      **/
     protected $termo;
+    
 
     /**
      * Set bombilla

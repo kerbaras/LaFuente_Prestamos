@@ -58,6 +58,8 @@ abstract class Product implements ProductInterface
     public function __construct()
     {
         $this->prestamos = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->createdAt = new \DateTime();
+        $this->availability = true;
     }
 
     public function isAvailable()
