@@ -49,7 +49,7 @@ class User extends BaseUser
     /**
      * @var string
      *
-     * @ORM\Column(name="dniNumero", type="string", length=255)
+     * @ORM\Column(name="dniNumero", type="string", length=255, unique=true)
      */
     protected $dniNumero;
 
@@ -63,21 +63,21 @@ class User extends BaseUser
     /**
      * @var string
      *
-     * @ORM\Column(name="celular", type="string", length=255)
+     * @ORM\Column(name="celular", type="string", length=255, nullable=true)
      */
     protected $celular;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="image", type="blob")
+     * @ORM\Column(name="image", type="blob", nullable=true)
      */
     protected $image;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="imageType", type="string", length=64)
+     * @ORM\Column(name="imageType", type="string", length=64, nullable=true)
      */
     protected $imageType;
 
@@ -107,7 +107,7 @@ class User extends BaseUser
         if(!$file->isValid()){
             throw new FileException("Invalid File");
         }
-        
+
         $imageFile    = fopen($file->getRealPath(), 'r');
         $imageContent = fread($imageFile, $file->getClientSize());
         fclose($imageFile);
