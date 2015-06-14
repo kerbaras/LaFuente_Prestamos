@@ -1,0 +1,26 @@
+<?php
+
+namespace LaFuente\Bundle\PrestamosBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Termo
+ *
+ * @ORM\Table(name="productos_termos")
+ * @ORM\Entity(repositoryClass="LaFuente\Bundle\PrestamosBundle\Entity\TermoRepository")
+ */
+class Termo
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="numero", type="smallint")
+     */
+    protected $numero;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Mate", mappedBy="termo")
+     **/
+    protected $mate;
+}

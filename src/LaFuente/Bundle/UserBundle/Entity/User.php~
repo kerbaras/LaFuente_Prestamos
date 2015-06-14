@@ -1,0 +1,86 @@
+<?php
+
+namespace LaFuente\Bundle\UserBundle\Entity;
+
+use FOS\UserBundle\Model\User as BaseUser;
+use LaFuente\Bundle\PrestamosBundle\Entity\Prestamo;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * User
+ *
+ * @ORM\Table(name="users")
+ * @ORM\Entity(repositoryClass="LaFuente\Bundle\UserBundle\Entity\UserRepository")
+ */
+class User
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=255)
+     */
+    protected $nombre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="apellido", type="string", length=255)
+     */
+    protected $apellido;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="dniTipo", type="string", length=255)
+     */
+    protected $dniTipo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="dniNumero", type="string", length=255)
+     */
+    protected $dniNumero;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sexo", type="string", length=255)
+     */
+    protected $sexo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="celular", type="string", length=255)
+     */
+    protected $celular;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="blob")
+     */
+    protected $image;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imageType", type="string", length=64)
+     */
+    protected $imageType;
+
+    /**
+     * @ORM\OneToMany(targetEntity="LaFuente\Bundle\PrestamosBundle\Entity\Prestamo", mappedBy="usuario")
+     **/
+    protected $prestamos;
+}

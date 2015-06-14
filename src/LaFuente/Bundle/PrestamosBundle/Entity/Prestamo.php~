@@ -1,0 +1,62 @@
+<?php
+
+namespace LaFuente\Bundle\PrestamosBundle\Entity;
+
+use LaFuente\Bundle\UserBundle\Entity\User;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Prestamo
+ *
+ * @ORM\Table(name="prestamos")
+ * @ORM\Entity(repositoryClass="LaFuente\Bundle\PrestamosBundle\Entity\PrestamoRepository")
+ */
+class Prestamo
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fecha", type="datetime")
+     */
+    private $fecha;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="LaFuente\Bundle\UserBundle\Entity\User")
+     * @ORM\JoinColumn(name="prestador_id", referencedColumnName="id")
+     **/
+    protected $prestador;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="LaFuente\Bundle\UserBundle\Entity\User", inversedBy="prestamos")
+     * @ORM\JoinColumn(name="usuario_id", referencedColumnName="id")
+     **/
+    protected $usuario;
+
+    /**
+     * @ORM\OneToMany(targetEntity="PrestamoProducto", mappedBy="prestamo")
+     **/
+    protected $products;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descripcion", type="text")
+     */
+    private $descripcion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="estado", type="string", length=63)
+     */
+    private $estado;
+}

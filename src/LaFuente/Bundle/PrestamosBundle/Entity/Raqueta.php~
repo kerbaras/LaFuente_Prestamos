@@ -1,0 +1,35 @@
+<?php
+
+namespace LaFuente\Bundle\PrestamosBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Raqueta
+ *
+ * @ORM\Table(name="productos_raquetas")
+ * @ORM\Entity(repositoryClass="LaFuente\Bundle\PrestamosBundle\Entity\RaquetaRepository")
+ */
+class Raqueta
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="identifier", type="string", length=31)
+     */
+    protected $identifier;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="color", type="string", length=63)
+     */
+    protected $color;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="estado", type="string", length=63)
+     */
+    protected $estado;
+}
