@@ -4,6 +4,8 @@ namespace LaFuente\Bundle\UserBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use LaFuente\Bundle\PrestamosBundle\Entity\Prestamo;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -84,7 +86,7 @@ class User extends BaseUser
      **/
     protected $prestamos;
 
-    
+
     /**
      * Constructor
      */
@@ -92,6 +94,26 @@ class User extends BaseUser
     {
         parent::__construct();
         $this->prestamos = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    public function setImageBlob(File $file)
+    {
+        if (!$file){
+            $this->setImage(null);
+            $this->setImageType(null);
+            return $this;
+        }
+
+        if(!$file->isValid()){
+            throw new FileException("Invalid File");
+        }
+        
+        $imageFile    = fopen($file->getRealPath(), 'r');
+        $imageContent = fread($imageFile, $file->getClientSize());
+        fclose($imageFile);
+        $this->setImage($imageContent);
+        $this->setImageType($file->getMimeType());
+        return $this;
     }
 
     /**
