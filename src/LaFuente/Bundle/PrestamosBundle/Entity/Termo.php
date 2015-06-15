@@ -23,7 +23,12 @@ class Termo extends Product
      * @ORM\OneToOne(targetEntity="Mate", mappedBy="termo")
      **/
     protected $mate;
-    
+
+
+    public function __toString()
+    {
+        return 'Termo ' . $this->numero;
+    }
 
     /**
      * Set numero

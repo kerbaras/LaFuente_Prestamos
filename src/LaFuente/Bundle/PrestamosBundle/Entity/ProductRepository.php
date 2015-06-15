@@ -12,4 +12,9 @@ use Doctrine\ORM\EntityRepository;
  */
 class ProductRepository extends EntityRepository
 {
+    public function getAllAvailables($state=true){
+        $qb = $this->createQueryBuilder('p');
+        $qb->where('p.availability = :en')
+            ->setParameter('en', $state);
+    }
 }

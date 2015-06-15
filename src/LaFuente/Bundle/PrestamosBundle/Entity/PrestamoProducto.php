@@ -37,7 +37,7 @@ class PrestamoProducto
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="devueltoAt", type="datetime")
+     * @ORM\Column(name="devuelto_at", type="datetime")
      */
     private $devueltoAt;
 

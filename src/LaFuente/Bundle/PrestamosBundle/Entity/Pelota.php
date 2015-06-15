@@ -32,7 +32,12 @@ class Pelota extends Product
      * @ORM\Column(name="estado", type="string", length=63)
      */
     protected $estado;
-    
+
+
+    public function __toString()
+    {
+        return 'Pelota ' . $this->identifier . ' (' . $this->color . ')';
+    }
 
     /**
      * Set identifier

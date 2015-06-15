@@ -24,7 +24,12 @@ class Mate extends Product
      * @ORM\JoinColumn(name="termo_id", referencedColumnName="id")
      **/
     protected $termo;
-    
+
+
+    public function __toString()
+    {
+        return 'Mate ' . $this->getTermo()->getNumero();
+    }
 
     /**
      * Set bombilla

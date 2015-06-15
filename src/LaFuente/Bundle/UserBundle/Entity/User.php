@@ -42,14 +42,14 @@ class User extends BaseUser
     /**
      * @var string
      *
-     * @ORM\Column(name="dniTipo", type="string", length=255)
+     * @ORM\Column(name="dni_tipo", type="string", length=255)
      */
     protected $dniTipo;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="dniNumero", type="string", length=255, unique=true)
+     * @ORM\Column(name="dni_numero", type="string", length=255, unique=true)
      */
     protected $dniNumero;
 
@@ -77,7 +77,7 @@ class User extends BaseUser
     /**
      * @var string
      *
-     * @ORM\Column(name="imageType", type="string", length=64, nullable=true)
+     * @ORM\Column(name="image_mime", type="string", length=64, nullable=true)
      */
     protected $imageType;
 
