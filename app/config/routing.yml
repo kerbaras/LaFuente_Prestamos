@@ -4,7 +4,3 @@ prestamos:
 
 user:
     resource: "@UserBundle/Resources/config/routing.yml"
-
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
