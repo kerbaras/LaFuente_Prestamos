@@ -1,0 +1,34 @@
+{
+  "name": "LaFuente_Prestamos",
+  "version": "1.0.0",
+  "homepage": "https://github.com/matias-pierobon/LaFuente_Prestamos",
+  "authors": [
+    "Matias Pierobon <matias.pierobonm@gmail.com>"
+  ],
+  "description": "Sistema de prestamos de la Fuente - Info@UNLP",
+  "main": "web/app.php",
+  "keywords": [
+    "LaFuente",
+    "Info",
+    "Informatica",
+    "UNLP",
+    "Prestamos"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "jquery-ui": "~1.11.4",
+    "bootstrap": "~3.3.5",
+    "bootstrap-material-design": "~0.3.0",
+    "animate.css": "~3.4.0",
+    "nanoscroller": "~0.8.7",
+    "metisMenu": "~2.1.0"
+  }
+}
