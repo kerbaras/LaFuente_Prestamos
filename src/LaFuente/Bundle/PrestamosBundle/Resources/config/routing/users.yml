@@ -1,0 +1,3 @@
+prestamos_users_homepage:
+    path:     /
+    defaults: { _controller: PrestamosBundle:Users:index }

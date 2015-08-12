@@ -1,3 +1,7 @@
 prestamos_homepage:
     path:     /
     defaults: { _controller: PrestamosBundle:Main:index }
+prestamos_users_ref:
+    resource: "@PrestamosBundle/Resources/config/routing/users.yml"
+    prefix:   /users
+

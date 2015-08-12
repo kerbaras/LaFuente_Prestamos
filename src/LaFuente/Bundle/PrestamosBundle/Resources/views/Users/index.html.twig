@@ -1,0 +1,90 @@
+{% extends 'PrestamosBundle::layout.html.twig' %}
+
+{% set activeMenu = "Usuarios" %}
+
+{% block main %}
+
+  <section>
+    <div class="section-body">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="card">
+            <div class="card-head bg-primary">
+              <div class="tools pull-left">
+                <form class="navbar-search" role="search">
+                  <div class="form-group has-feedback">
+                    <input type="text" class="form-control" name="contactSearch" placeholder="Buscar Contacto">
+                    <i class="mi form-control-feedback" aria-hidden="true">&#xE8B6;</i>
+                  </div>
+                </form>
+              </div>
+              <div class="tools">
+                <a href="#" class="btn btn-sm btn-fab btn-raised btn-material-teal-100 mi">&#xE7FE;</a>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="row contact-viewer">
+                <div class="col-sm-4 col-md-3 col-lg-2">
+                  <ul class="nav nav-pills nav-stacked sidebar">
+                    <li><small>CATEGORIAS</small></li>
+                    <li class="active"><a href="#">Todos <small class="pull-right text-bold opacity-75">180</small></a></li>
+                    <li><a href="#">Administradores <small class="pull-right text-bold opacity-75">3</small></a></li>
+                    <li><a href="#">En Prestamo <small class="pull-right text-bold opacity-75">4</small></a></li>
+                    <li class="hidden-xs"><small>ÚLTIMOS VISTOS</small></li>
+                    <li class="hidden-xs">
+                      <a href="#">
+                        <div class="media">
+                          <div class="media-left">
+                            <img class="media-object img-circle" src="{{ asset('images/profile.jpg') }}" alt="..." width="40px">
+                          </div>
+                          <div class="media-body">
+                            <h4 class="media-heading">John Doe</h4>
+                            <i class="mi">&#xE0CF;</i> +54 221 596-8856
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                </div>
+
+
+                <div class="col-sm-8 col-md-9 col-lg-10">
+                  <div class="margin-bottom-xxl clearfix">
+                      <span class="text-light text-lg pull-left" style="line-height: 56px">Resultados: <strong>180</strong></span>
+                      <div class="btn-group pull-right no-shadow">
+                        <a href="#" data-target="#" class="btn btn-flat btn-default dropdown-toggle" data-toggle="dropdown">
+                          Ordenar por
+                          <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="javascript:void(0)">Apellido</a></li>
+                            <li><a href="javascript:void(0)">Nombre</a></li>
+                            <li><a href="javascript:void(0)">E-Mail</a></li>
+                        </ul>
+                    </div>
+                  </div>
+
+                  <div class="list-results">
+                    
+                  </div>
+
+                  <div class="text-center">
+                    <ul class="pagination">
+                      <li class="disabled"><a href="javascript:void(0)"><i class="mi">&#xE5CB;</i></a></li>
+                      <li class="active"><a href="javascript:void(0)">1</a></li>
+                      <li><a href="javascript:void(0)">2</a></li>
+                      <li><a href="javascript:void(0)">3</a></li>
+                      <li><a href="javascript:void(0)">4</a></li>
+                      <li><a href="javascript:void(0)">5</a></li>
+                      <li><a href="javascript:void(0)"><i class="mi">&#xE5CC;</i></a></li>
+                  </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

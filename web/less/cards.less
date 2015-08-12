@@ -1,0 +1,223 @@
+.card {
+  position: relative;
+  margin-bottom: 24px;
+  background-color: #ffffff;
+  color: #313534;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+
+  &:after {
+    clear: both;
+  }
+
+  .no-shadow {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .card-head {
+    position: relative;
+    line-height: 52px;
+    min-height: 56px;
+    vertical-align: middle;
+    border-radius: 2px 2px 0 0;
+
+    &:after {
+      clear: both;
+    }
+
+    header {
+      display: inline-block;
+      padding: 11px 24px;
+      vertical-align: middle;
+      line-height: 17px;
+      font-size: 20px;
+
+      & > h1, & > h2, & > h3, & > h4, & > h5, & > h6 {
+        vertical-align: middle;
+        margin: 0;
+        line-height: 1;
+      }
+
+      small {
+        color: inherit;
+        opacity: 0.6;
+        font-size: 75%;
+      }
+
+      div {
+        display: inline-block;
+      }
+    }
+    .tools {
+      padding-right: 16px;
+      float: right;
+
+      .tool-btn {
+        background: transparent;
+        text-align: center;
+        vertical-align: middle;
+        text-decoration: none;
+        color: #333;
+        color: rgba(0,0,0,.84);
+        cursor: pointer;
+        display: inline-block;
+        line-height: 1.42857143;
+        width: 36px;
+        font-size: 16px;
+
+        &:hover{
+          text-decoration: none;
+          color: @black;
+        }
+        
+        &.btn-collapse {
+          &:hover {
+            color: @primary;
+          }
+
+          &:before {
+            content: "\e5cf";
+          }
+
+          &.collapsed:before {
+            content: "\e5ce";
+          }
+        }
+
+        &.btn-refresh{
+          &:hover {
+            color: @blue-700;
+          }
+
+          &:before{
+            content: "\e5d5";
+          }
+        }
+
+        &.btn-close{
+          &:hover {
+            color: @red-700;
+          }
+
+          &:before{
+            content: "\e5cd";
+          }
+        }
+      }
+
+      form {
+        margin-top: 7px;
+        margin-bottom: 7px;
+        margin-left: 24px;
+        line-height: normal;
+        vertical-align: middle;
+
+        input {
+          display: inline-block;
+          padding: 5px 10px;
+          padding-right: 25px;
+          height: 36px;
+          width: 250px;
+
+          font-size: 16px;
+          color: @white;
+          background: @primary;
+
+          -webkit-transition: max-width 0.25s ease-in-out;
+          -o-transition: max-width 0.25s ease-in-out;
+          transition: max-width 0.25s ease-in-out;
+        }
+
+        i.form-control-feedback {
+          padding-top: 6px;
+          font-size: 24px;
+          font-weight: 600;
+        }
+      }
+
+      & > .btn-group {
+        margin-right: 4px;
+      }
+
+      & > .btn-group-xs {
+        margin-right: 10px;
+      }
+
+      & > .btn-group-sm {
+        margin-right: 4px;
+      }
+
+      & > .btn-group-lg {
+        margin-right: 0;
+      }
+
+      &.pull-left > .btn-group {
+        margin-left: 4px;
+      }
+
+      &.pull-left > .btn-group-xs {
+        margin-left: 10px;
+      }
+
+      &.pull-left > .btn-group-sm {
+        margin-left: 4px;
+      }
+
+      &.pull-left > .btn-group-lg {
+        margin-left: 0;
+      }
+
+      &.card-head-xs {
+        line-height: 32px;
+        min-height: 36px;
+
+        header {
+          font-size: 15px;
+          padding: 8px 24px;
+        }
+      }
+
+      &.card-head-sm {
+        line-height: 44px;
+        min-height: 48px;
+
+        header {
+          font-size: 15px;
+        }
+      }
+
+      &.card-head-lg {
+        line-height: 76px;
+        min-height: 80px;
+
+        header {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+
+
+  .card-body {
+    padding: 24px;
+    position: relative;
+
+    &:after {
+      clear: both;
+    }
+
+    &:last-child {
+      border-radius: 0 0 2px 2px;
+    }
+
+    .table-responsive {
+      margin: 0;
+    }
+  }
+
+  .nano:last-child {
+    border-radius: 0 0 2px 2px;
+  }
+}

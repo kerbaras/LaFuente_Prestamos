@@ -1,16 +1,16 @@
 {% if not activeMenu is defined %}{% set activeMenu = "" %}{% endif %}
 <ul class="metismenu" id="menu">
   <li{% if activeMenu == "Dashboard" %} class="active"{% endif %}>
-    <a href="#"><div class="icon"><i class="material-icons">&#xE88A;</i></div> <span class="title">Dashboard</span></a>
+    <a href="#"><div class="icon"><i class="mi">&#xE88A;</i></div> <span class="title">Dashboard</span></a>
   </li>
   <li{% if activeMenu == "Productos" %} class="active"{% endif %}>
-    <a href="#"><div class="icon"><i class="material-icons">&#xE8EF;</i></div> <span class="title">Productos</span></a>
+    <a href="#"><div class="icon"><i class="mi">&#xE8EF;</i></div> <span class="title">Productos</span></a>
+  </li>
+  <li{% if activeMenu == "Usuarios" %} class="active"{% endif %}>
+    <a href="{{ path('prestamos_users_homepage') }}"><div class="icon"><i class="mi">&#xE7FB;</i></div> <span class="title">Usuarios</span></a>
   </li>
   <li>
-    <a href="#"><div class="icon"><i class="material-icons">&#xE88A;</i></div> <span class="title">Prestamos</span></a>
-  </li>
-  <li>
-    <a href="#" aria-expanded="true"><div class="icon"><i class="material-icons">&#xE88A;</i></div> <span class="title">Dashboard <i class="material-icons expand pull-right"></i></span></a>
+    <a href="#" aria-expanded="true"><div class="icon"><i class="mi">&#xE158;</i></div> <span class="title">Dashboard <i class="mi expand pull-right"></i></span></a>
     <ul aria-expanded="true">
       <li><a href="#" aria-expanded="false">Menu 4.1</a></li>
       <li><a href="#" aria-expanded="false">Menu 4.2</a></li>
