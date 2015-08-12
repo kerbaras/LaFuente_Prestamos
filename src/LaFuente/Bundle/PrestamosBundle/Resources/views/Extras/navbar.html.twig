@@ -1,0 +1,41 @@
+<nav class="headerbar">
+    <div class="headerbar-left">
+        <ul class="header-nav header-nav-options">
+            <li class="header-nav-brand">
+                <div class="brand-holder">
+                    <a href="{{ path('prestamos_homepage') }}">
+                        <span class="text-lg text-bold text-primary">PRESTAMOS</span>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="headerbar-right toggle-menu">
+        <ul class="header-nav header-nav-options">
+            <li><a href="#" data-toggle="collapse" data-target="#mainMenu"><i class="material-icons">&#xE8FE;</i></a></li>
+        </ul>
+    </div>
+    <div class="headerbar-right secondbar">
+        <ul class="header-nav header-nav-options">
+            <li><a href="#"><i class="material-icons">&#xE7F4;</i></a></li>
+        </ul>
+        <ul class="header-nav profile">
+            <li class="dropdown">
+                <a href="#" data-target="dropdown-menu" class="dropdown-toggle" data-toggle="dropdown">
+                    <img src="{{ asset('images/profile.jpg') }}" alt="" class="img-circle">
+                    <span class="info">
+                        Nombre de Usuario
+                        <small>Administrador</small>
+                    </span>
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#"><i class="material-icons">&#xE7FD;</i> Perfil</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#"><i class="material-icons">&#xE899;</i> Lock</a></li>
+                    <li><a href="#"><i class="material-icons">&#xE8AC;</i> Cerrar Sesión</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>

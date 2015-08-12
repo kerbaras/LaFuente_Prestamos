@@ -1,0 +1,23 @@
+{% if not activeMenu is defined %}{% set activeMenu = "" %}{% endif %}
+<ul class="metismenu" id="menu">
+  <li{% if activeMenu == "Dashboard" %} class="active"{% endif %}>
+    <a href="#"><div class="icon"><i class="material-icons">&#xE88A;</i></div> <span class="title">Dashboard</span></a>
+  </li>
+  <li{% if activeMenu == "Productos" %} class="active"{% endif %}>
+    <a href="#"><div class="icon"><i class="material-icons">&#xE8EF;</i></div> <span class="title">Productos</span></a>
+  </li>
+  <li>
+    <a href="#"><div class="icon"><i class="material-icons">&#xE88A;</i></div> <span class="title">Prestamos</span></a>
+  </li>
+  <li>
+    <a href="#" aria-expanded="true"><div class="icon"><i class="material-icons">&#xE88A;</i></div> <span class="title">Dashboard <i class="material-icons expand pull-right"></i></span></a>
+    <ul aria-expanded="true">
+      <li><a href="#" aria-expanded="false">Menu 4.1</a></li>
+      <li><a href="#" aria-expanded="false">Menu 4.2</a></li>
+      <li><a href="#" aria-expanded="false">Menu 4.3</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="#" aria-expanded="false">Menu 5</a>
+  </li>
+</ul>

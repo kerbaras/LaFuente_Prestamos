@@ -1,10 +1,10 @@
-// Plugins
-@import "bootstrap/index";
-@import "../bower_components/aniimate.css/animate.css";
-@import "../bower_components/metisMenu/dist/metisMenu.css";
-@import "../bower_components/nanoscroller/bin/css/nanoscroller";
+@import 'bootstrap/variables';
+@import '../bower_components/bootstrap-material-design/less/_variables';
+@import "../bower_components/bootstrap-material-design/less/_colors.less";
+@import "../bower_components/bootstrap-material-design/less/_mixins.less";
 
 //Custom
+@import 'variables';
 
 html,
 body,
@@ -12,9 +12,47 @@ body,
   height: 100%;
 }
 body {
+  font-family: "Roboto", sans-serif, Helvetica, Arial, sans-serif;
   background: #e5e6e6;
   background-size: 100% 100%;
   color: #313534;
   -ms-overflow-style: scrollbar;
 }
 
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  vertical-align: middle;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.nano{
+  .nano-pane{
+    width: 6px;
+    z-index: 6000;
+  }
+}
+
+@import 'helpers';
+@import 'navbar';
+@import 'mainMenu';
+@import 'main';

@@ -1,0 +1,144 @@
+#mainMenu {
+	position: fixed;
+	z-index: 1006;
+	left: 0;
+	top: 64px;
+	bottom: 0;
+	padding: 0;
+	width: @menu-width;
+	background: @menu-background;
+
+	#menu {
+		position: relative;
+		padding: 16px 0;
+
+		& > li {
+			margin-bottom: 12px;
+			
+			& > a {
+				
+				.icon {
+					position: absolute;
+					left: 12px;
+					top: 0;
+					width: 40px;
+					height: 40px;
+					color: rgba(255, 255, 255, 0.65);
+					font-size: 18px;
+					overflow: hidden;
+					border-radius: 999px;
+					-webkit-transition: all 0.15s linear;
+					-o-transition: all 0.15s linear;
+					transition: all 0.15s linear;
+
+					i {
+						position: absolute;
+						left: 0;
+						right: 0;
+						top: -16px;
+						bottom: 0;
+						margin: auto;
+						line-height: 40px;
+						width: 1em;
+					}
+				}
+
+				.title {
+					position: relative;
+					left: 0;
+					display: block;
+					margin-left: 57px;
+					padding-left: 6px;
+					padding-right: 12px;
+					color: rgba(255, 255, 255, 0.55);
+					white-space: nowrap;
+					overflow: hidden;
+					opacity: 1;
+					text-shadow: 0 1px 2px #000000;
+					-webkit-transition: all 0.5s cubic-bezier(0.15, 0.99, 0.18, 1.01);
+					-o-transition: all 0.5s cubic-bezier(0.15, 0.99, 0.18, 1.01);
+					transition: all 0.5s cubic-bezier(0.15, 0.99, 0.18, 1.01);
+				}
+
+			}
+
+			& > ul {
+				padding: 0;
+
+				& > li {
+
+					& > a {
+						display: block;
+						text-decoration: none;
+						padding: 7px 20px;
+						font-size: 12px;
+						z-index: 1;
+						color: rgba(255, 255, 255, 0.5);
+					}
+
+					ul {
+						padding: 0;
+
+						& > li {
+
+							& > a {
+								padding: 7px 30px;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		li {
+
+			a{
+				position: relative;
+				display: block;
+				text-decoration: none;
+				padding: 10px 0;
+				font-size: 12px;
+				line-height: normal;
+				border-radius: 0;
+				padding-left: 0;
+				z-index: 1;
+				color: rgba(255, 255, 255, 0.5);
+
+				i.expand:before {
+						content: "\e5cc";
+					}
+			}
+
+			&.active {
+				& > a {
+					color: @white;
+					background: @blue-grey-800;
+
+					.icon{
+						background-color: #ffffff;
+						border-color: #ffffff;
+						color: @primary;
+					}
+
+					i.expand:before {
+						content: "\e5cf";
+					}
+				}
+			}
+
+			&:hover {
+				& > a {
+					color: @white;
+					background: @blue-grey-700;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: @screen-xs-max) {
+	#mainMenu {
+		top: 64px;
+		width: 100%;
+	}
+}

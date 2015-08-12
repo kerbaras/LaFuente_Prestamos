@@ -1,0 +1,39 @@
+#main{
+  padding-left: @menu-width;
+  width: 100%;
+  min-height: 100vh;
+
+  .content{
+    padding-top: 63px;
+
+    section{
+      position: relative;
+      padding: 24px;
+
+      .section-body:first-child {
+        margin-top: 24px;
+      }
+
+      &::first-child {
+        padding-top: 0;
+      }
+    }
+
+    footer{
+      width: 100%;
+      bottom: 0;
+      background: @primary;
+      color: @white;
+    }
+  }
+}
+
+@media (max-width: @screen-xs-max) {
+  #main{
+    padding-left: 0;
+
+    .content{
+      padding-top: 126px;
+    }
+  }
+}
