@@ -1,0 +1,152 @@
+{% extends 'PrestamosBundle:Layouts:simple.html.twig' %}
+
+{% set activeMenu = "Usuarios" %}
+
+{% block breadcrumb %}
+  <li><a href="{{ path('prestamos_users_homepage') }}">Usuarios</a></li>
+  <li class="active">Nuevo usuario</li>
+{% endblock %}
+
+{% block sectionBody %}
+<div class="contain-lg">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="card">
+        <div class="card-head bg-primary">
+          <header>Agrega un usuario</header>
+        </div>
+        <form class="form">
+          <div class="card-body bg-primary form-inverse">
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                        <input class="form-control floating-label input-lg" name="nombre" id="inputNombre" type="text" placeholder="Nombre">
+                    </div>
+                  </div><!--end .col -->
+                  <div class="col-md-6">
+                    <div class="form-group">
+                        <input class="form-control floating-label input-lg" name="apellido" id="inputApellido" type="text" placeholder="Apellido">
+                    </div>
+                  </div><!--end .col -->
+                </div><!--end .row -->
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                        <input class="form-control floating-label input-lg" name="dni" id="inputDni" type="text" placeholder="DNI">
+                    </div>
+                  </div><!--end .col -->
+                  <div class="col-md-6">
+                    <div class="form-group">
+                        <input class="form-control floating-label input-lg" name="usuario" id="inputUsername" type="text" placeholder="Nombre de Usuario" autocomplete="off">
+                    </div>
+                  </div><!--end .col -->
+                </div><!--end .row -->
+              </div><!--end .col -->
+            </div><!--end .row -->
+          </div>
+
+          <div class="nav-head">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#datos" data-toggle="tab">Datos Personales</a></li>
+              <li><a href="#notas" data-toggle="tab">Notas</a></li>
+            </ul>
+          </div>
+
+          <div class="card-body tab-content">
+
+            <div class="tab-pane fade active in" id="datos">
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="contraseña" class="control-label">Contraseña</label>
+                        <input type="password" class="form-control" id="inputPassword" name="contraseña" autocomplete="off">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="telefono" class="control-label">Teléfono</label>
+                        <input type="text" class="form-control" id="inputTel" name="telefono">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="mail" class="control-label">Email</label>
+                        <input type="email" class="form-control" id="inputMail" name="mail">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-8">
+                      <div class="form-group">
+                        <label for="direccion.calle" class="control-label">Calle</label>
+                        <input type="text" class="form-control" id="inputStreet" name="direccion.calle">
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="direccion.numero" class="control-label">Número</label>
+                        <input type="numeric" class="form-control" id="inputNumber" name="direccion.numero">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-8">
+                      <div class="form-group">
+                        <label for="direccion.ciudad" class="control-label">Ciudad</label>
+                        <input type="text" class="form-control" id="inputCity" name="direccion.ciudad">
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="direccion.zip" class="control-label">Zip</label>
+                        <input type="numeric" class="form-control" id="inputZip" name="direccion.zip">
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="col-md-4">
+                  <div id="addressMap" class="height-7"></div>
+                </div>
+                
+              </div>
+            </div>
+            <div class="tab-pane fade" id="notas">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="notes" class="control-label">Notas</label>
+                    <textarea class="form-control" rows="10" id="inputNotes" name="notes"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer class="card-actionbar">
+            <div class="card-actionbar-row">
+              <a href="{{ path('prestamos_users_homepage') }}" class="btn btn-flat btn-danger">Cancelar</a>
+              <button class="btn btn-primary" type="submit">Guardar</button>
+            </div>
+          </footer>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block javascripts %}
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3SbyFGlZKCWqTkydIlRHcUWPgPJyfqrA&callback=laFuente.prestamos.pages.newUserPage.initGoogleMaps" async defer ></script>
+  <script src="{{ asset('js/laFuente/prestamos/pages/newUser.js') }}" type="text/javascript" charset="utf-8"></script>
+{% endblock %}

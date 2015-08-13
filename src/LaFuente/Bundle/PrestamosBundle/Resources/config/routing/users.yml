@@ -1,3 +1,6 @@
 prestamos_users_homepage:
     path:     /
     defaults: { _controller: PrestamosBundle:Users:index }
+prestamos_users_new:
+    path:     /nuevo
+    defaults: { _controller: PrestamosBundle:Users:new }

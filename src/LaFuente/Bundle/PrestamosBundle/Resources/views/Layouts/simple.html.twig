@@ -1,0 +1,16 @@
+{% extends 'PrestamosBundle::layout.html.twig' %}
+
+{% block main %}
+
+  <section>
+    <div class="section-header">
+      <ol class="breadcrumb">
+        {% block breadcrumb %}{% endblock %}
+      </ol>
+    </div>
+    <div class="section-body">
+      {% block sectionBody %}{% endblock %}
+    </div>
+  </section>
+
+{% endblock %}

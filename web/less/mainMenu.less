@@ -7,6 +7,9 @@
 	padding: 0;
 	width: @menu-width;
 	background: @menu-background;
+	-webkit-transition: width 0.5s cubic-bezier(0.15, 0.99, 0.18, 1.01);
+	-o-transition: width 0.5s cubic-bezier(0.15, 0.99, 0.18, 1.01);
+	transition: width 0.5s cubic-bezier(0.15, 0.99, 0.18, 1.01);
 
 	#menu {
 		position: relative;
@@ -16,11 +19,13 @@
 			margin-bottom: 12px;
 			
 			& > a {
+
+				min-width: @menu-min-width;
 				
 				.icon {
 					position: absolute;
 					left: 12px;
-					top: 0;
+					top: 2px;
 					width: 40px;
 					height: 40px;
 					color: rgba(255, 255, 255, 0.65);
@@ -104,15 +109,19 @@
 				z-index: 1;
 				color: rgba(255, 255, 255, 0.5);
 
-				i.expand:before {
+				i.expand{
+					font-size: 24px;
+					
+					&:before {
 						content: "\e5cc";
 					}
+				}
 			}
 
 			&.active {
 				& > a {
 					color: @white;
-					background: @blue-grey-800;
+					background: @menu-active-color;
 
 					.icon{
 						background-color: #ffffff;
@@ -129,9 +138,37 @@
 			&:hover {
 				& > a {
 					color: @white;
-					background: @blue-grey-700;
+					background: @menu-hover-color;
 				}
 			}
+		}
+	}
+}
+
+@media (min-width: @screen-sm-min) {
+	.menu-hidden {
+		#mainMenu:not(:hover) {
+			width: @menu-min-width;
+
+			#menu > li {
+				
+				& > a > .title{
+					left: -10px;
+					opacity: 0;
+
+					i.expand{
+						display: none;
+					}
+				}
+
+				ul {
+					display: none;
+				}
+			}
+		}
+
+		#main {
+			padding-left: @menu-min-width;
 		}
 	}
 }

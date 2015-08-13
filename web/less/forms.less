@@ -1,0 +1,68 @@
+.form-inverse {
+  .form-group{
+    .form-control {
+      color: #f2f3f3;
+      border-bottom-color: rgba(255, 255, 255, 0.25);
+      background-image: linear-gradient(rgba(255, 255, 255, 0.25),rgba(255, 255, 255, 0.25)),linear-gradient(rgba(255, 255, 255, 0.25),rgba(255, 255, 255, 0.25));
+
+      &::-moz-placeholder {
+        color: rgba(255, 255, 255, 0.5);
+        opacity: 1;
+      }
+
+      &::-ms-input-placeholder {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      &::-webkit-input-placeholder {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      & ~ div.floating-label {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      & ~ label:after,
+      & ~ .form-control-line:after,{
+        background-color: #a6ede8;
+      }
+
+      &:focus {
+        background-image: linear-gradient(rgba(255, 255, 255, 0.5),rgba(255, 255, 255, 0.5)),linear-gradient(rgba(255, 255, 255, 0.5),rgba(255, 255, 255, 0.5));
+      }
+
+      &:focus ~ label,
+      &:focus ~ div.floating-label{
+        color: #a6ede8;
+      }
+
+      &[disabled],
+      &[readonly], {
+        background-color: #ffffff;
+        color: #313534 !important;
+      }
+    }
+  
+    select:focus {
+      background-color: #ffffff;
+      color: #313534;
+    }
+  }
+}
+
+fieldset[disabled] .form-inverse .form-group .form-control {
+  border-bottom-color: rgba(255, 255, 255, 0.4);
+}
+
+input.input-lg {
+  height: 45px!important;
+  padding: 0 0!important;
+  font-size: 1.6em;
+  line-height: 1.3333333;
+  border-radius: 2px!important;
+
+  &:not(:focus) ~ div.floating-label{
+    font-size: 1.6em;
+    line-height: 1.3333333;
+  }
+}

@@ -42,13 +42,6 @@ class User extends BaseUser
     /**
      * @var string
      *
-     * @ORM\Column(name="dni_tipo", type="string", length=255)
-     */
-    protected $dniTipo;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="dni_numero", type="string", length=255, unique=true)
      */
     protected $dniNumero;

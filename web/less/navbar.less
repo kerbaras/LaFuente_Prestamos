@@ -85,6 +85,7 @@ header nav.headerbar {
 
         i{
           vertical-align: middle;
+          font-size: 24px;
         }
       }
     }
@@ -93,6 +94,13 @@ header nav.headerbar {
 
       & > li {
         padding: 0;
+
+        &.open {
+          box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+          a {
+            background: transparent;
+          }
+        }
 
         & > a {
 
@@ -121,6 +129,12 @@ header nav.headerbar {
               opacity: 0.5;
             }
           }
+        }
+
+        & > .dropdown-menu {
+          right: 0;
+          border-radius: 0 0 4px 4px;
+          margin-top: 0;
         }
       }
     }
@@ -184,5 +198,4 @@ header nav.headerbar {
       }
     }
   }
-
 }
