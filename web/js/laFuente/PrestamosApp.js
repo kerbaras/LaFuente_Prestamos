@@ -1,11 +1,4 @@
-var laFuente = {
-    PrestamosApp : null,
-    prestamos : {
-        pages : {
-            newUserPage : null
-        }
-    }
-}
+var laFuentePrestamos = {};
 
 (function(namespace, $) {
     "use strict";
@@ -82,4 +75,4 @@ var laFuente = {
 
     namespace.PrestamosApp = new PrestamosApp;
 
-}(laFuente, jQuery));
+}(this.laFuentePrestamos, jQuery));

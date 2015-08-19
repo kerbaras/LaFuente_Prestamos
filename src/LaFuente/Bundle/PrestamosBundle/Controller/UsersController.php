@@ -17,7 +17,7 @@ class UsersController extends Controller
         return $this->render('PrestamosBundle:Users:new.html.twig');
     }
 
-    public function createAction()
+    public function createAction(Request $request)
     {
         return $this->render('PrestamosBundle:Users:index.html.twig');
     }

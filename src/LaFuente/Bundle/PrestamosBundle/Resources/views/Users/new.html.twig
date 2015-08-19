@@ -11,35 +11,48 @@
 <div class="contain-lg">
   <div class="row">
     <div class="col-xs-12">
-      <div class="card">
-        <div class="card-head bg-primary">
-          <header>Agrega un usuario</header>
-        </div>
-        <form class="form">
+      <article class="card">
+        <form class="form" action="" method="post">
+          <div class="card-head bg-primary">
+            <header>Agrega un usuario</header>
+            <div class="tools tools-togglebuttons">
+              <ul class="list-inline">
+                <li class="togglebutton togglebutton-material-red">
+                  <label data-toggle="tooltip" data-placement="bottom" title="Bloqueado"><input type="checkbox" ></label>
+                </li>
+                <li class="togglebutton togglebutton-material-orange">
+                  <label data-toggle="tooltip" data-placement="bottom" title="Expirado"><input type="checkbox"></label>
+                </li>
+                <li class="togglebutton togglebutton-material-green">
+                  <label data-toggle="tooltip" data-placement="bottom" title="Habilitado"><input type="checkbox" checked></label>
+                </li>
+              </ul>
+            </div>
+          </div>
           <div class="card-body bg-primary form-inverse">
             <div class="row">
               <div class="col-xs-12">
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                        <input class="form-control floating-label input-lg" name="nombre" id="inputNombre" type="text" placeholder="Nombre">
+                        <input class="form-control floating-label input-lg" name="nombre" id="inputNombre" type="text" placeholder="Nombre" required>
                     </div>
                   </div><!--end .col -->
                   <div class="col-md-6">
                     <div class="form-group">
-                        <input class="form-control floating-label input-lg" name="apellido" id="inputApellido" type="text" placeholder="Apellido">
+                        <input class="form-control floating-label input-lg" name="apellido" id="inputApellido" type="text" placeholder="Apellido" required>
                     </div>
                   </div><!--end .col -->
                 </div><!--end .row -->
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                        <input class="form-control floating-label input-lg" name="dni" id="inputDni" type="text" placeholder="DNI">
+                        <input class="form-control floating-label input-lg" name="dni" id="inputDni" type="text" placeholder="DNI" required>
                     </div>
                   </div><!--end .col -->
                   <div class="col-md-6">
                     <div class="form-group">
-                        <input class="form-control floating-label input-lg" name="usuario" id="inputUsername" type="text" placeholder="Nombre de Usuario" autocomplete="off">
+                        <input class="form-control floating-label input-lg" name="telefono" id="inputTel" type="text" placeholder="Teléfono">
                     </div>
                   </div><!--end .col -->
                 </div><!--end .row -->
@@ -51,6 +64,7 @@
             <ul class="nav nav-tabs">
               <li class="active"><a href="#datos" data-toggle="tab">Datos Personales</a></li>
               <li><a href="#notas" data-toggle="tab">Notas</a></li>
+              <li><a href="#photo" data-toggle="tab">Foto</a></li>
             </ul>
           </div>
 
@@ -62,14 +76,14 @@
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="contraseña" class="control-label">Contraseña</label>
-                        <input type="password" class="form-control" id="inputPassword" name="contraseña" autocomplete="off">
+                        <label for="telefono" class="control-label">Nombre de Usuario</label>
+                        <input type="text" class="form-control" id="inputUsername" name="username" required>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="telefono" class="control-label">Teléfono</label>
-                        <input type="text" class="form-control" id="inputTel" name="telefono">
+                        <label for="password" class="control-label">Contraseña</label>
+                        <input type="password" class="form-control" id="inputPassword" name="password" autocomplete="off" required>
                       </div>
                     </div>
                   </div>
@@ -78,7 +92,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label for="mail" class="control-label">Email</label>
-                        <input type="email" class="form-control" id="inputMail" name="mail">
+                        <input type="email" class="form-control" id="inputMail" name="mail" required>
                       </div>
                     </div>
                   </div>
@@ -121,12 +135,29 @@
                 
               </div>
             </div>
+
             <div class="tab-pane fade" id="notas">
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
                     <label for="notes" class="control-label">Notas</label>
                     <textarea class="form-control" rows="10" id="inputNotes" name="notes"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="photo">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group margin-bottom-xxl">
+                    <input type="text" readonly="" class="form-control floating-label" placeholder="Browse...">
+                    <input type="file" id="inputImage">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="text-center">
+                    <img class="imageViewer img-thumbnail" data-defaulturl="{{ asset('images/profile2.png') }}" alt="">
                   </div>
                 </div>
               </div>
@@ -139,7 +170,7 @@
             </div>
           </footer>
         </form>
-      </div>
+      </article>
     </div>
   </div>
 </div>
@@ -147,6 +178,7 @@
 {% endblock %}
 
 {% block javascripts %}
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3SbyFGlZKCWqTkydIlRHcUWPgPJyfqrA&callback=laFuente.prestamos.pages.newUserPage.initGoogleMaps" async defer ></script>
-  <script src="{{ asset('js/laFuente/prestamos/pages/newUser.js') }}" type="text/javascript" charset="utf-8"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3SbyFGlZKCWqTkydIlRHcUWPgPJyfqrA&callback=laFuentePrestamos.newUserPage.initGoogleMaps" async defer ></script>
+  <script src="{{ asset('js/imageViewer.js') }}" type="text/javascript" charset="utf-8"></script>
+  <script src="{{ asset('js/laFuente/pages/newUser.js') }}" type="text/javascript" charset="utf-8"></script>
 {% endblock %}

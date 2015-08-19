@@ -18,7 +18,30 @@
     </div>
     <div class="headerbar-right secondbar">
         <ul class="header-nav header-nav-options">
-            <li><a href="#"><i class="mi">&#xE7F4;</i></a></li>
+            <li class="dropdown">
+                <a href="#" data-target="dropdown-menu" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="mi">&#xE7F4;</i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="#">
+                            <div class="alert alert-callout alert-primary">
+                                <div class="media">
+                                    <div class="media-body">
+                                        <h4 class="media-heading">John Doe</h4>
+                                        En Prestamo!
+                                    </div>
+                                    <div class="media-right">
+                                        <img class="media-object img-circle" src="{{ asset('images/profile.jpg') }}" alt="...">
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li><a href="#">Ver todos los prestamos</a></li>
+                </ul>
+            </li>
         </ul>
         <ul class="header-nav profile">
             <li class="dropdown">

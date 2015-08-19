@@ -1,0 +1,28 @@
+.alert{
+
+  &.alert-callout{
+    position: relative;
+    padding-left: 20px;
+    background: #ffffff;
+    color: #313534;
+    border: 1px solid;
+    border-radius: 3px;
+    border-color: rgba(83, 88, 88, 0.15);
+
+    &:before{
+      content: '';
+      position: absolute;
+      display: block;
+      width: 4px;
+      left: -1px;
+      top: -1px;
+      bottom: -1px;
+      background: rgba(83, 88, 88, 0.15);
+    }
+
+    &.alert-primary:before { background: @primary }
+    &.alert-danger:before { background: @danger }
+    &.alert-info:before { background: @info }
+    &.alert-warning:before { background: @warning }
+  }
+}
